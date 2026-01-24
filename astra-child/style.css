@@ -1,0 +1,589 @@
+/*
+Theme Name: Astra Child
+Theme URI: https://wpastra.com/
+Template: astra
+Author: Brainstorm Force
+Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads and the only theme in the world with 6,000+ five-star reviews! It’s ideal for professional web designers, solopreneurs, small businesses, eCommerce, membership sites and any type of website. It offers special features and templates so it works perfectly with all page builders like Spectra, Elementor, Beaver Builder, etc. Fast performance, clean code, mobile-first design and schema markup are all built-in, making the theme exceptionally SEO-friendly. It’s fully compatible with WooCommerce, SureCart and other eCommerce plugins and comes with lots of store-friendly features and templates. Astra also provides expert support for free users. A dedicated team of fully trained WordPress experts are on hand to help with every aspect of the theme. Try the live demo of Astra: https://zipwp.org/themes/astra/
+Tags: custom-menu,custom-logo,entertainment,one-column,two-columns,left-sidebar,e-commerce,right-sidebar,custom-colors,editor-style,featured-images,full-width-template,microformats,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready,blog
+Version: 4.12.0.1768553206
+Updated: 2026-01-16 08:46:46 */
+
+/* =============================
+   Базові стилі сайту
+   ============================= */
+
+html, body {
+  background: #fffaf5;
+}
+
+.button,
+.wp-block-button__link,
+.elementor-button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* =============================
+   Фон і обгортка (Astra)
+   ============================= */
+
+#page,
+#content,
+.site-content,
+.ast-container,
+.ast-container-fluid {
+  background: transparent;
+}
+
+/* =============================
+   Elementor: базове вирівнювання
+   ============================= */
+
+.elementor h1, .elementor h2, .elementor h3 {
+  letter-spacing: -0.02em;
+}
+
+.elementor a.elementor-button,
+.elementor .elementor-button {
+  border-radius: 12px;
+  padding: 14px 22px;
+}
+
+/* =============================
+   WooCommerce: картки товарів
+   ============================= */
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.woocommerce ul.products li.product:hover,
+.woocommerce-page ul.products li.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+/* =============================
+   ============================= */
+
+.woocommerce span.onsale {
+  display: none !important;
+}
+
+/* =============================
+   WooCommerce: заголовок сторінки
+   ============================= */
+
+.woocommerce-page .page-title,
+.woocommerce-page .entry-title {
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+/* =============================
+   WooCommerce: сортування
+   ============================= */
+
+.woocommerce .woocommerce-ordering {
+  margin: 0 0 18px;
+  position: relative;
+}
+
+.woocommerce .woocommerce-ordering select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  min-width: 220px;
+  max-width: 100%;
+  padding: 10px 38px 10px 12px;
+
+  border: 1px solid #e6e1da;
+  border-radius: 12px;
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  font-size: 14px;
+  outline: none;
+}
+
+.woocommerce .woocommerce-ordering:after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-55%);
+  pointer-events: none;
+  color: #444;
+  font-size: 16px;
+}
+
+/* =============================
+   Сайдбар: ширина і переноси тексту
+   ============================= */
+
+.woocommerce-page #secondary,
+.woocommerce-page .widget-area {
+  min-width: 320px;
+}
+
+.woocommerce-page .widget-title,
+.woocommerce-page .widget,
+.woocommerce-page .widget * {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+}
+
+/* =============================
+ пошук (поле + кнопка-лупа)
+   ============================= */
+
+.woocommerce-page #secondary .widget_product_search .widget-title,
+.woocommerce-page #secondary .widget_search .widget-title {
+  display: none !important;
+}
+
+.woocommerce-page #secondary .widget_product_search form,
+.woocommerce-page #secondary .widget_search form {
+  display: flex !important;
+  gap: 10px;
+  align-items: center;
+}
+
+.woocommerce-page #secondary .widget_product_search input[type="search"],
+.woocommerce-page #secondary .widget_search input[type="search"] {
+  flex: 1 1 auto !important;
+  min-width: 160px;
+
+  height: 44px;
+  padding: 10px 12px;
+
+  border: 1px solid #e6e1da;
+  border-radius: 12px;
+  background: #fff;
+  outline: none;
+}
+
+.woocommerce-page #secondary .widget_product_search button,
+.woocommerce-page #secondary .widget_search input[type="submit"] {
+  flex: 0 0 44px !important;
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+  border-radius: 12px;
+  font-weight: 700;
+
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.woocommerce-page #secondary .widget_product_search button::before,
+.woocommerce-page #secondary .widget_search input[type="submit"]::before {
+  content: "🔍";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-indent: 0;
+  font-size: 18px;
+}
+
+.woocommerce-page #secondary .widget_product_search button:hover,
+.woocommerce-page #secondary .widget_search input[type="submit"]:hover {
+  filter: brightness(0.95);
+}
+
+/* =============================
+   Сайдбар: фільтр ціни (нейтральні кольори)
+   ============================= */
+
+.woocommerce-page #secondary .widget_price_filter .price_slider_wrapper {
+  background: #fff;
+  border: 1px solid #e6e1da;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider {
+  height: 6px;
+  border-radius: 999px;
+  background: #e9e3dc;
+  border: 0;
+}
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider .ui-slider-range {
+  background: #111;
+  border-radius: 999px;
+}
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider .ui-slider-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #111;
+  top: -6px;
+}
+
+.woocommerce-page #secondary .widget_price_filter .price_label {
+  font-weight: 700;
+  color: #111;
+}
+
+.woocommerce-page #secondary .widget_price_filter .button {
+  border-radius: 12px;
+  font-weight: 800;
+  padding: 10px 14px;
+}
+
+.woocommerce-page #secondary .widget_price_filter .button:hover {
+  filter: brightness(0.92);
+}
+
+/* =============================
+   Сайдбар: "Очистити все" як кнопка
+   ============================= */
+
+.woocommerce-page #secondary .woocommerce-widget-layered-nav-filters a,
+.woocommerce-page #secondary .widget a.clear,
+.woocommerce-page #secondary .widget .clear a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e6e1da;
+  background: #fff;
+
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.woocommerce-page #secondary .woocommerce-widget-layered-nav-filters a:hover,
+.woocommerce-page #secondary .widget a.clear:hover,
+.woocommerce-page #secondary .widget .clear a:hover {
+  filter: brightness(0.94);
+}
+
+/* =============================
+   WooCommerce: пагінація
+   ============================= */
+
+.woocommerce nav.woocommerce-pagination ul {
+  border: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border: 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e6e1da;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+/* =============================
+   Сайдбар магазину: пошук (вигляд)
+   ============================= */
+
+/* Прибрати заголовок "Пошук" */
+.woocommerce-page #secondary .widget-title,
+.woocommerce-page #secondary label[for*="search"],
+.woocommerce-page #secondary .search-field + label {
+  display: none !important;
+}
+
+/* Рядок пошуку: поле + кнопка */
+.woocommerce-page #secondary form.search-form,
+.woocommerce-page #secondary form.woof_text_search_container,
+.woocommerce-page #secondary .woof_text_search_container form,
+.woocommerce-page #secondary .widget_product_search form,
+.woocommerce-page #secondary .widget_search form {
+  display: flex !important;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Поле вводу пошуку */
+.woocommerce-page #secondary input[type="search"],
+.woocommerce-page #secondary input.search-field,
+.woocommerce-page #secondary .woof_text_search_container input[type="text"],
+.woocommerce-page #secondary .woof_text_search_container input[type="search"] {
+  flex: 1 1 auto !important;
+  min-width: 160px;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #e6e1da !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  outline: none;
+}
+
+/* Кнопка пошуку: маленька + “лупа”, без тексту */
+.woocommerce-page #secondary button[type="submit"],
+.woocommerce-page #secondary input[type="submit"],
+.woocommerce-page #secondary .search-submit {
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.woocommerce-page #secondary button[type="submit"]::before,
+.woocommerce-page #secondary input[type="submit"]::before,
+.woocommerce-page #secondary .search-submit::before {
+  content: "🔍";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-indent: 0;
+  font-size: 18px;
+}
+
+/* =============================
+   Сайдбар магазину: кнопки (нейтральний hover)
+   ============================= */
+
+.woocommerce-page #secondary a,
+.woocommerce-page #secondary button,
+.woocommerce-page #secondary input[type="submit"] {
+  transition: filter .15s ease, transform .15s ease;
+}
+
+.woocommerce-page #secondary button:hover,
+.woocommerce-page #secondary input[type="submit"]:hover,
+.woocommerce-page #secondary a:hover {
+  filter: brightness(0.93);
+}
+
+/* =============================
+   Сайдбар магазину: "Очистити все" (як кнопка)
+   ============================= */
+
+.woocommerce-page #secondary a,
+.woocommerce-page #secondary a.woof_reset_search_form,
+.woocommerce-page #secondary .woof_reset_search_form {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e6e1da;
+  background: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =============================
+   Фільтр ціни: стандартний WooCommerce (jQuery UI)
+   ============================= */
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider {
+  height: 6px;
+  border-radius: 999px;
+  background: #e9e3dc;
+  border: 0;
+}
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider .ui-slider-range {
+  background: #111;
+  border-radius: 999px;
+}
+
+.woocommerce-page #secondary .widget_price_filter .ui-slider .ui-slider-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #111;
+  top: -6px;
+}
+
+/* =============================
+   Фільтр ціни: плагіни (IRS slider: WOOF/інші)
+   ============================= */
+
+.woocommerce-page #secondary .irs-line {
+  height: 6px !important;
+  border-radius: 999px !important;
+}
+
+.woocommerce-page #secondary .irs-bar,
+.woocommerce-page #secondary .irs-bar-edge {
+  background: #111 !important;
+  border-radius: 999px !important;
+}
+
+.woocommerce-page #secondary .irs-handle > i:first-child {
+  background: #fff !important;
+  border: 2px solid #111 !important;
+  border-radius: 999px !important;
+  width: 18px !important;
+  height: 18px !important;
+  top: -2px !important;
+}
+
+/* =============================
+   Фільтр: кнопка "Скинути" (вигляд)
+   ============================= */
+
+.woocommerce-page #secondary .woof_submit_search_form_container button,
+.woocommerce-page #secondary .woof_submit_search_form_container input[type="submit"],
+.woocommerce-page #secondary button.woof_submit_search_form {
+  border-radius: 12px !important;
+  font-weight: 900 !important;
+  padding: 12px 16px !important;
+}
+/* =============================
+   Фільтр ціни – вигляд слайдера
+   ============================= */
+
+/* доріжка (фон) */
+.woocommerce .widget_price_filter .ui-slider.ui-widget-content {
+  background-color: #ddd !important;
+  height: 6px;
+  border-radius: 999px;
+}
+
+/* активний діапазон */
+.woocommerce .widget_price_filter .ui-slider-range {
+  background-color: #111 !important;
+}
+
+/* повзунки */
+.woocommerce .widget_price_filter .ui-slider-handle {
+  background-color: #fff !important;
+  border: 2px solid #111 !important;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: -6px;
+}
+/* Форма замовлення */
+.fd-order { max-width: 720px; margin: 0 auto; }
+.fd-order-form { display: grid; gap: 10px; }
+.fd-order-form input, .fd-order-form textarea {
+  width: 100%;
+  border: 1px solid #e6e1da;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+}
+.fd-btn {
+  height: 46px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+.fd-success { background:#eaffea; border:1px solid #bfe7bf; padding:12px; border-radius:12px; margin-bottom:12px; }
+.fd-error { background:#ffecec; border:1px solid #f0b3b3; padding:12px; border-radius:12px; margin-bottom:12px; }
+/* =============================
+   Кнопки WooCommerce – вирівняти розмір
+   ============================= */
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  font-size: 14px !important;
+  line-height: 1 !important;
+  padding: 14px 18px !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  min-height: 44px !important;
+}
+
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce a.checkout-button {
+  font-size: 14px !important;
+  padding: 14px 18px !important;
+  min-height: 44px !important;
+}
+/* Лого зверху, назва під ним (по центру) */
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-title,
+.site-title a {
+  text-align: center;
+  
+}
+
+.site-title a {
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+header .custom-logo-link img {
+    max-width: 180px;
+    width: 150px;
+}
+
+/* Прибрати "+ Free Shipping" */
+.ast-shipping-text {
+  display: none !important;
+}
+
+/* Прибрати 3-й і 4-й значки оплати (залишити 2) */
+.ast-single-product-payments ul > li.ast-custom-payment:nth-child(3),
+.ast-single-product-payments ul > li.ast-custom-payment:nth-child(4) {
+  display: none !important;
+}
+
+/* Центрувати іконки оплати */
+.ast-single-product-payments ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.woocommerce-message,
+.woocommerce-info {
+  border-top-color: #111 !important;
+}
